@@ -203,7 +203,8 @@ body {
   padding-top: 94px;
   padding-bottom: 94px;
 }
-.hidden-title {
+.hidden-title,
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -626,6 +627,8 @@ body {
   background-color: var(--accent-color);
 }
 
+/*  MODAL */
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -654,8 +657,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(1) rotate(0);
 
-  min-width: 528px;
+  width: 528px;
   min-height: 581px;
+  padding: 40px 39px 40px 41px;
 
   background-color: var(--main-white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -677,7 +681,114 @@ body {
   width: 30px;
   height: 30px;
 
-  background-color: var(--main-white);
+  background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+
+  cursor: pointer;
+  transition: fill var(--transition-duration) var(--transition-timing-function);
+}
+.close-icon:hover,
+.close-icon:focus {
+  fill: var(--accent-color);
+}
+.modal-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+
+  color: var(--primary-text-color);
+}
+
+.form-field {
+  margin-bottom: 10px;
+}
+.input-wrap {
+  position: relative;
+}
+
+.modal-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  background-color: transparent;
+  color: var(--primary-text-color);
+  outline: none;
+
+  cursor: pointer;
+  transition: border-color var(--transition-duration) var(--transition-timing-function);
+}
+
+.modal-input:focus,
+.modal-input:hover {
+  border-color: var(--accent-color);
+}
+
+.modal-input:focus + .input-icon,
+.modal-input:hover + .input-icon {
+  fill: var(--accent-color);
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill var(--transition-duration) var(--transition-timing-function);
+}
+.comments-field {
+  margin-bottom: 20px;
+}
+.comments {
+  resize: none;
+
+  height: 120px;
+  padding: 16px;
+}
+.input-label {
+  display: block;
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: var(--secondary-text-color);
+}
+
+.comments::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+.confirm-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: var(--secondary-text-color);
+}
+
+.link.confirm-rools {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.confirm-label::before {
+  content: '';
+  width: 16px;
+  height: 15px;
+
+  border: 2px solid var(--primary-text-color);
+  border-radius: 2px;
+  margin-right: 10px;
 }
