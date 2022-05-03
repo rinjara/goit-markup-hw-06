@@ -306,7 +306,7 @@ body {
 
   font-weight: 700;
   font-size: 14px;
-  line-height: 1, 14;
+  line-height: 1.14;
 
   text-transform: uppercase;
 }
@@ -854,6 +854,10 @@ body {
   background-position: center;
   background-size: contain;
   border: transparent;
+}
+.modal-check:hover + .confirm-label::before,
+.modal-check:focus + .confirm-label::before {
+  border-color: var(--accent-color);
 }
 
 .link.confirm-rools {
