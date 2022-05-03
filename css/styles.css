@@ -849,7 +849,7 @@ body {
 }
 .modal-check:checked + .confirm-label::before {
   background-color: var(--accent-color);
-  background-image: url(../images/icons/check.svg);
+  background-image: url(../images/icons/check-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
